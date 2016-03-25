@@ -12,3 +12,6 @@ import 'angular2/http';
 
 // RxJS
 import 'rxjs';
+
+// Bootstrap css
+import 'bootstrap/dist/css/bootstrap.css';

@@ -1,7 +1,9 @@
 import {Component} from 'angular2/core';
 
 @Component({
-  template: `It is just a start.`
+  template: `
+    dashboard
+  `
 })
-export class Home {
+export class Dashboard {
 }

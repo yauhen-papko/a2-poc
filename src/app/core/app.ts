@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, RouterLink, RouterOutlet } from 'angular2/router';
-import { Home } from '../modules/home/home-cmp';
+import { Layout } from '../modules/layout/layout-cmp';
 import { Login } from '../modules/login/login-cmp';
 
 @RouteConfig([
@@ -20,7 +20,7 @@ import { Login } from '../modules/login/login-cmp';
 })
 @RouteConfig([
   { path: '/',      name: 'Index', component: Login, useAsDefault: true },
-  { path: '/home',  name: 'Home',  component: Home },
+  { path: '/app/...',  name: 'App',  component: Layout },
   { path: '/login',  name: 'Login',  component: Login }
 ])
 export class App {}

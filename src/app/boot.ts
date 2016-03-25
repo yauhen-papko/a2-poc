@@ -3,6 +3,8 @@ import { bootstrap } from 'angular2/platform/browser';
 import { HTTP_PROVIDERS } from 'angular2/http';
 import { APP_BASE_HREF, ROUTER_PROVIDERS } from 'angular2/router';
 
+import '../assets/style/app.css';
+
 // root component
 import { App } from './core/app';
 

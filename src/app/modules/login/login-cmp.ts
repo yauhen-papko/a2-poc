@@ -4,18 +4,20 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
 
 @Component({
   template: `
-    <div>
-        <h1>Login</h1>
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Welcome to Infoblox</h1>
         <form role="form" (submit)="login($event, username.value, password.value)">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" #username class="form-control" id="username" placeholder="Username">
+            <input type="text" #username class="form-control" id="username" 
+                    placeholder="Username" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" #password class="form-control" id="password" placeholder="Password">
+            <input type="password" #password class="form-control" id="password" 
+                    placeholder="Password" required>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Sign in</button>
             
         </form>
     </div>
@@ -28,6 +30,6 @@ export class Login {
 
   login(event, username, password) {
     event.preventDefault();
-    this.router.parent.navigateByUrl('/home');
+    this.router.parent.navigateByUrl('/app');
   }
 }
