@@ -1,41 +1,36 @@
 import {Component} from 'angular2/core';
 
 @Component({
+  selector: 'global-policy',
   template: `
-    <div class="col-md-4">
-        <form class="form-horizontal">
+        <form class="form-inline">
             <div class="form-group">
-                <label for="spywareAction"  class="col-sm-4 control-label">Spyware</label>
-                <div class="col-sm-8">
-                    <select class="form-control" id="spywareAction">
-                        <option>Deny</option>
-                        <option>Allow</option>
-                    </select>
-                </div>
+                <label for="policyAction"  class="control-label">Global Threat Policy</label>
+                <select class="form-control" id="policyAction" [(ngModel)]="policy.action">
+                    <option>Monitor</option>
+                    <option>Passthru</option>
+                    <option>Block</option>
+                    <option>Substitute</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="botAction"  class="col-sm-4 control-label">Bot</label>
-                <div class="col-sm-8">
-                    <select class="form-control" id="botAction">
-                        <option>Deny</option>
-                        <option>Allow</option>
-                    </select>
-                </div>
+            <div class="form-group" *ngIf="policy.action=='Substitute'">
+                <input type="text" class="form-control" id="substitute"
+                        placeholder="Substitute" [(ngModel)]="policy.substitute">
             </div>
-            <div class="form-group">
-                <label for="malwareAction"  class="col-sm-4 control-label">Malware</label>
-                <div class="col-sm-8">
-                    <select class="form-control" id="malwareAction">
-                        <option>Deny</option>
-                        <option>Allow</option>
-                    </select>
-                </div>
-            </div>
-            
-            <button type="submit" class="btn btn-primary pull-right">Save</button>
         </form>
-    </div>
   `
 })
 export class GlobalPolicy {
+  policy: GlobalPolicyData;
+
+  constructor() {
+    this.policy = {
+      action: 'Monitor'
+    }
+  }
+}
+
+interface GlobalPolicyData {
+  action: string;
+  substitute?: string;
 }

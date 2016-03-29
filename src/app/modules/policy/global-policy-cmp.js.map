@@ -1,0 +1,1 @@
+{"version":3,"file":"global-policy-cmp.js","sourceRoot":"","sources":["global-policy-cmp.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAwB,eAAe,CAAC,CAAA;AAsBxC;IAGE;QACE,IAAI,CAAC,MAAM,GAAG;YACZ,MAAM,EAAE,SAAS;SAClB,CAAA;IACH,CAAC;IA3BH;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,eAAe;YACzB,QAAQ,EAAE,4xBAgBT;SACF,CAAC;;oBAAA;IASF,mBAAC;AAAD,CAAC,AARD,IAQC;AARY,oBAAY,eAQxB,CAAA"}

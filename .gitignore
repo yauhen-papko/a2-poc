@@ -37,3 +37,7 @@ target
 
 # Typing folder
 typings
+
+#Generated js and map.js files from Typescript sources
+app/**/*.js
+app/**/*.js.map

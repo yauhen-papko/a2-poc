@@ -7,7 +7,7 @@
     margin-left: -250px;
     left: 250px;
     width: 250px;
-    background: #CCC;
+    background: #3C3C3C;
     position: fixed;
     height: 100%;
     overflow-y: auto;
@@ -19,17 +19,84 @@
     width: 100%;
 }
 
+.ib-brand {
+    padding-left: 20px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid #A8A2A2;
+}
+
 .sidebar-nav {
     position: absolute;
-    top: 0;
+    top: 70px;
     width: 250px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+.sidebar-nav .router-link-active {
+    color: #FFF;
+}
+
+.sidebar-nav .router-link-active .glyphicon {
+    color: #337ab7;
+}
+
+.sidebar-nav > li > a:hover, .sidebar-nav > li > a:focus, .sidebar-nav .router-link-active {
+    background-color: #1C1C1C;
+}
+
+.sidebar-nav > li > a {
+    color: #9d9d9d;
+}
+
+.top-bar {
+    height: 70px;
+    border-bottom: 1px solid #D8D2D2;
+}
+
+.content-area {
+    padding-top: 20px;
+}
+
+.content-area h4 {
+    border-bottom: 1px solid #D8D2D2;
+}
+
+.notification-sign, .user-info {
+    border-left: 1px solid #D8D2D2;
+    height: 70px;
+}
+
+.notification-sign {
+    width: 70px;
+}
+
+.notification-sign span {
+    font-size: 20px;
+    padding: 25px;
+}
+
+.user-info span {
+    font-size: 20px;
+    padding: 25px;
+    position: relative;
+    top: 20px;
+}
+
 .modal-visible {
     display: block;
+}
+
+.panel-default > .panel-heading {
+    color: #FFF;
+    background-color: #3C3C3C;
+    border-color: #333;
+}
+
+.ib-table-head {
+    color: #FFF;
+    background-color: #3C3C3C;
 }
 
 @media (max-width:767px) {
@@ -53,4 +120,26 @@
         transition: all 0.4s ease 0s;
     }
 
+}
+
+.chart {
+  background: #eee;
+  padding: 3px;
+}
+
+.chart div {
+  width: 0;
+  transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 5px;
+  color: white;
+  box-shadow: 2px 2px 2px #666;
 }

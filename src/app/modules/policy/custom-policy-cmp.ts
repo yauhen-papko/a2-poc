@@ -1,10 +1,11 @@
 import {Component} from 'angular2/core';
 
 @Component({
-  template: `
+    selector: 'custom-policy',
+    template: `
   <div class="col-md-12">
     <div class="btn-group pull-right" role="group" aria-label="...">
-        <button type="button" class="btn btn-default glyphicon glyphicon-plus" 
+        <button type="button" class="btn btn-default glyphicon glyphicon-plus"
                 (click)="showModal()"></button>
         <button type="button" class="btn btn-default glyphicon glyphicon-arrow-up"
                 (click)="movePolicyUp()"></button>
@@ -12,9 +13,9 @@ import {Component} from 'angular2/core';
                 (click)="movePolicyDown()"></button>
     </div>
     <div class="clearfix"></div>
-    <table class="table table-striped">
+    <table class="table table-striped ">
         <thead>
-            <tr>
+            <tr class="ib-table-head">
                 <th>Domain</th>
                 <th>Source IP / Client</th>
                 <th>Action</th>
@@ -23,7 +24,7 @@ import {Component} from 'angular2/core';
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="#policy of policies; #i = index" [class.info]="selectedPolicyIndex==i" 
+            <tr *ngFor="#policy of policies; #i = index" [class.info]="selectedPolicyIndex==i"
                     (click)="selectPolicy(i)">
                 <td>{{policy.domain}}</td>
                 <td>{{policy.source}}</td>
@@ -35,7 +36,7 @@ import {Component} from 'angular2/core';
         </tbody>
     </table>
   </div>
-  
+
   <div id="myModal" class="modal" [class.modal-visible]="isModalVisible" role="dialog">
     <div class="modal-dialog">
 
@@ -50,14 +51,14 @@ import {Component} from 'angular2/core';
                 <div class="form-group">
                     <label for="domain"  class="col-sm-4 control-label">Domain</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="domain" 
+                        <input type="text" class="form-control" id="domain"
                                 placeholder="Domain" [(ngModel)]="editPolicy.domain">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="source"  class="col-sm-4 control-label">Source IP/Client</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="source" 
+                        <input type="text" class="form-control" id="source"
                                 placeholder="Source IP/Client" [(ngModel)]="editPolicy.source">
                     </div>
                 </div>
@@ -73,16 +74,16 @@ import {Component} from 'angular2/core';
                 <div class="form-group">
                     <label for="substitute"  class="col-sm-4 control-label">Substitute</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="substitute" 
+                        <input type="text" class="form-control" id="substitute"
                                 placeholder="Substitute" [(ngModel)]="editPolicy.substitute">
                     </div>
                 </div>
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left" 
+            <button type="button" class="btn btn-default pull-left"
                     (click)="hideModal()">Cancel</button>
-            <button type="button" class="btn btn-primary pull-right" 
+            <button type="button" class="btn btn-primary pull-right"
                     (click)="savePolicy()">Save</button>
         </div>
         </div>
