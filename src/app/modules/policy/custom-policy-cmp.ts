@@ -1,96 +1,10 @@
 import {Component} from 'angular2/core';
+import {MODAL_DIRECTIVES} from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @Component({
+    directives: [MODAL_DIRECTIVES],
     selector: 'custom-policy',
-    template: `
-  <div class="col-md-12">
-    <div class="btn-group pull-right" role="group" aria-label="...">
-        <button type="button" class="btn btn-default glyphicon glyphicon-plus"
-                (click)="showModal()"></button>
-        <button type="button" class="btn btn-default glyphicon glyphicon-arrow-up"
-                (click)="movePolicyUp()"></button>
-        <button type="button" class="btn btn-default glyphicon glyphicon-arrow-down"
-                (click)="movePolicyDown()"></button>
-    </div>
-    <div class="clearfix"></div>
-    <table class="table table-striped ">
-        <thead>
-            <tr class="ib-table-head">
-                <th>Domain</th>
-                <th>Source IP / Client</th>
-                <th>Action</th>
-                <th>Substitute</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="#policy of policies; #i = index" [class.info]="selectedPolicyIndex==i"
-                    (click)="selectPolicy(i)">
-                <td>{{policy.domain}}</td>
-                <td>{{policy.source}}</td>
-                <td>{{policy.action}}</td>
-                <td>{{policy.substitute}}</td>
-                <td><button type="button" class="btn btn-default btn-sm glyphicon glyphicon-trash"
-                         (click)="deletePolicy(i)"></button></td>
-            </tr>
-        </tbody>
-    </table>
-  </div>
-
-  <div id="myModal" class="modal" [class.modal-visible]="isModalVisible" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" (click)="hideModal()">&times;</button>
-            <h4 class="modal-title">Add Policy</h4>
-        </div>
-        <div class="modal-body">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="domain"  class="col-sm-4 control-label">Domain</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="domain"
-                                placeholder="Domain" [(ngModel)]="editPolicy.domain">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="source"  class="col-sm-4 control-label">Source IP/Client</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="source"
-                                placeholder="Source IP/Client" [(ngModel)]="editPolicy.source">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="action"  class="col-sm-4 control-label">Action</label>
-                    <div class="col-sm-8">
-                        <select class="form-control" id="action" [(ngModel)]="editPolicy.action">
-                            <option>Deny</option>
-                            <option>Allow</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="substitute"  class="col-sm-4 control-label">Substitute</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="substitute"
-                                placeholder="Substitute" [(ngModel)]="editPolicy.substitute">
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left"
-                    (click)="hideModal()">Cancel</button>
-            <button type="button" class="btn btn-primary pull-right"
-                    (click)="savePolicy()">Save</button>
-        </div>
-        </div>
-
-    </div>
-  </div>
-  `
+    template: require('./custom-template.html'),
 })
 export class CustomPolicy {
     policies: Policy[];
